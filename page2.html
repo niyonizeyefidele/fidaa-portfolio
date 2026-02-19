@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fidele Portfolio - Page Two</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header nav a {
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffd1c1;
+        }
+
+        header button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: white;
+            color: #ff6f61;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        header button:hover {
+            background-color: #ffe0db;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 20px;
+        }
+
+        #about {
+            background-color: #fffacd; 
+            border-left: 10px solid #ffb347;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffb347;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        #skills {
+            background-color: #d1c4e9; 
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        #skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #skills li {
+            display: inline-block;
+            background-color: #9575cd; 
+            color: white;
+            margin: 10px;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        #projects {
+            background-color: #b2dfdb; 
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.2s; }
+        .project-card:nth-child(2) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        #contact {
+            background-color: #ffe4e1;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        footer {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fidele Portfolio</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <button onclick="logout()">Logout</button>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+        <img src="fidele.jpg" alt="Fidele Profile Picture" class="profile-pic">
+        <p>I am a university student learning web development, building projects, and exploring design.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Problem Solving</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+        <h3>Simple Website</h3>
+        <p>A personal portfolio built using HTML and CSS.</p>
+    </div>
+    <div class="project-card">
+        <h3>Login Page</h3>
+        <p>A stylish login page with animation and gradient background.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: niyonizeyefidele567@email.com</p>
+</section>
+
+<footer>
+    &copy; 2026 Fidele
+</footer>
+
+<script>
+    // Protect page from direct access
+    if(localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "index.html";
+    }
+
+    function logout() {
+        localStorage.removeItem("loggedIn");
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>

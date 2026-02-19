@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 320px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff758c;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e84362;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-box">
+    <h2>Create Account</h2>
+    <input type="text" id="newUser" placeholder="Username"><br>
+    <input type="password" id="newPass" placeholder="Password"><br>
+    <button onclick="register()">Register</button>
+    <p id="message"></p>
+</div>
+
+<script>
+function register() {
+    var user = document.getElementById("newUser").value;
+    var pass = document.getElementById("newPass").value;
+
+    if(user !== "" && pass !== "") {
+        // Save credentials in localStorage
+        localStorage.setItem("savedUser", user);
+        localStorage.setItem("savedPass", pass);
+
+        document.getElementById("message").innerText = "Account created! Go login.";
+        setTimeout(function(){
+            window.location.href = "index.html";
+        }, 1500);
+    } else {
+        document.getElementById("message").innerText = "Fill all fields!";
+    }
+}
+</script>
+
+</body>
+</html>
